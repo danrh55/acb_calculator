@@ -1,0 +1,35 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="using:Acb.View.ViewModels"
+        mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="360"
+        x:Class="Acb.View.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Title="ACB Calculator"
+        Width="480"
+        Height="360"
+        WindowStartupLocation="CenterScreen">
+
+  <StackPanel Margin="32" Spacing="12" VerticalAlignment="Center">
+    <Button Content="Choose file…"
+            HorizontalAlignment="Stretch"
+            Command="{Binding SelectFileCommand}"
+            CommandParameter="{Binding $parent[Window]}" />
+
+    <Button Content="Ingest"
+            HorizontalAlignment="Stretch"
+            Command="{Binding IngestCommand}" />
+
+    <TextBlock Text="{Binding SelectedFileName}"
+               IsVisible="{Binding HasSelectedFile}"
+               FontSize="16"
+               TextWrapping="Wrap" />
+
+    <TextBlock Text="{Binding IngestStatus}"
+               IsVisible="{Binding HasIngestStatus}"
+               Opacity="0.7"
+               TextWrapping="Wrap" />
+  </StackPanel>
+
+</Window>

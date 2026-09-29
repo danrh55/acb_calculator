@@ -1,0 +1,6 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/ingestion/Acb.Ingestion.csproj" />
+    <Project Path="src/ui/Acb.View.csproj" />
+  </Folder>
+</Solution>
